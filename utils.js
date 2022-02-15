@@ -6,13 +6,11 @@ export function renderNote(content) {
     const h2 = document.createElement('h2');
     h2.classList.add('title');
     h2.setAttribute('id', `title${content.id}`);
-    h2.textContent = 'Found Dog - Rufus';
+    h2.textContent = `${content.title}`;
 
     const img = document.createElement('img');
     if (content.img) {
         img.src = content.img;
-    } else {
-        img.src = '';
     }
 
     const pText = document.createElement('p');
@@ -22,7 +20,10 @@ export function renderNote(content) {
     const pContact = document.createElement('p');
     pContact.classList.add('contact');
     pContact.textContent = `${content.contact}`;
-
-    div.append(h2, img, pText, pContact);
+    if (content.img) {
+        div.append(h2, img, pText, pContact);
+    } else {
+        div.append(h2, pText, pContact);
+    }
     return div;
 }

@@ -48,13 +48,13 @@ form {
     flex-direction: column;
     margin: 30px;
 }
-div {
+/* div {
     display: flex;
     flex-direction: row;
     align-items: center;
     max-width: 300px;
     text-overflow: wrap;
-}
+} */
 img {
     max-width: 200px;
 }
