@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { signupUser } from './fetch-utils.js';
+import { signupUser, redirectIfLoggedIn } from './fetch-utils.js';
 // let state
 const signUpForm = document.getElementById('signUp');
 const signUpEmail = document.getElementById('email-signUp');
@@ -9,5 +9,6 @@ signUpForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     // console.log('email', signUpEmail.value, 'and password', signUpPassword.value);
     await signupUser(signUpEmail.value, signUpPassword.value);
-    
+    redirectIfLoggedIn();
 });
+

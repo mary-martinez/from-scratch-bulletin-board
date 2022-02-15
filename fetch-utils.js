@@ -21,3 +21,9 @@ export async function signupUser(email, password) {
     console.log('user signed up');
     return resp;
 }
+
+export function redirectIfLoggedIn() {
+    if (getUser()) {
+        location.replace('/bulletins/');
+    }
+}
