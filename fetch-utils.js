@@ -7,9 +7,17 @@ function checkError({ data, error }) {
     return error ? console.error(error) : data;
 }
 
+export function getUser() {
+    return client.auth.session() && client.auth.session().user;
+}
+
 export async function fetchNotes() {
     const resp = await client.from('notes').select('*');
     return checkError(resp);
 }
 
-// console.log(await fetchNotes());
+export async function signupUser(email, password) {
+    const resp = await client.auth.signUp({ email, password });
+    console.log('user signed up');
+    return resp;
+}
