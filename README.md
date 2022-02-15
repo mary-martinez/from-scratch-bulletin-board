@@ -13,6 +13,7 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
 6) async signUp
 7) async signIn
 8) 
+
 Photocredits:
 - Rufus.jpg - Photo by Helena Lopes from Pexels: https://www.pexels.com/photo/short-coated-tan-dog-2253275/
 - 
