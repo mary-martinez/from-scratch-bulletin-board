@@ -18,7 +18,12 @@ export async function fetchNotes() {
 
 export async function signupUser(email, password) {
     const resp = await client.auth.signUp({ email, password });
-    console.log('user signed up');
+    // console.log('user signed up');
+    return resp;
+}
+
+export async function signInUser(email, password) {
+    const resp = await client.auth.signIn({ email, password });
     return resp;
 }
 
