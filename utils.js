@@ -8,11 +8,6 @@ export function renderNote(content) {
     h2.setAttribute('id', `title${content.id}`);
     h2.textContent = `${content.title}`;
 
-    const img = document.createElement('img');
-    if (content.img) {
-        img.src = content.img;
-    }
-
     const pText = document.createElement('p');
     pText.classList.add('text');
     pText.textContent = `${content.text}`;
@@ -20,10 +15,7 @@ export function renderNote(content) {
     const pContact = document.createElement('p');
     pContact.classList.add('contact');
     pContact.textContent = `${content.contact}`;
-    if (content.img) {
-        div.append(h2, img, pText, pContact);
-    } else {
-        div.append(h2, pText, pContact);
-    }
+    
+    div.append(h2, pText, pContact);
     return div;
 }

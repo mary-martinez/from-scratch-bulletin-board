@@ -43,3 +43,8 @@ export function checkAuth() {
         location.replace('/');
     }
 }
+
+export async function insertRow(newPost) {
+    const resp = await client.from('notes').insert([newPost]);
+    return checkError(resp);
+}
