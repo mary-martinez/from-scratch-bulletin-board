@@ -10,7 +10,7 @@ function defineLogBtn(authStatus) {
     } else {
         logBtn.textContent = 'Log-In or Sign-Up';
     }
-};
+}
 
 window.addEventListener('load', async () => {
     const authStatus = getUser();

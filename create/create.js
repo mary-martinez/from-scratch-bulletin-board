@@ -30,7 +30,7 @@ postForm.addEventListener('submit', async (e) => {
         text: message.value,
         contact: contact.value
     };
-    const test = await insertRow(newPost);
+    await insertRow(newPost);
     postForm.reset();
     location.replace('/');
 });
