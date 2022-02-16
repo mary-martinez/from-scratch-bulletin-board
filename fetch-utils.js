@@ -18,18 +18,16 @@ export async function fetchNotes() {
 
 export async function signupUser(email, password) {
     const resp = await client.auth.signUp({ email, password });
-    // console.log('user signed up');
-    return resp;
+    return resp.user;
 }
 
 export async function signInUser(email, password) {
     const resp = await client.auth.signIn({ email, password });
-    return resp;
+    return resp.user;
 }
 
 export async function logOut() {
-    const resp = client.auth.signOut();
-    return resp;
+    client.auth.signOut();
 }
 
 export function redirectIfLoggedIn() {

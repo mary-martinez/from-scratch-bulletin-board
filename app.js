@@ -1,11 +1,10 @@
 import { renderNote } from './utils.js';
-import { checkAuth, fetchNotes, getUser, logOut } from './fetch-utils.js';
+import { fetchNotes, getUser, logOut } from './fetch-utils.js';
 const bulletinBoard = document.getElementById('pinHere');
 const logBtn = document.getElementById('log');
 const createBtn = document.getElementById('create-post');
 
 function defineLogBtn(authStatus) {
-    //need to call checkAuth somewhere, I think
     if (authStatus) {
         logBtn.textContent = 'Log-Out';
     } else {
@@ -15,7 +14,6 @@ function defineLogBtn(authStatus) {
 
 window.addEventListener('load', async () => {
     const authStatus = getUser();
-    console.log('authStatus', authStatus);
     defineLogBtn(authStatus);
 
     bulletinBoard.textContent = '';
@@ -30,6 +28,7 @@ logBtn.addEventListener('click', async () => {
     const authStatus = getUser();
     if (authStatus) {
         await logOut();
+        location.replace('/');
     } else {
         location.replace('/auth/');
     }

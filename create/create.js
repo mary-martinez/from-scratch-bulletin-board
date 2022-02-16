@@ -1,4 +1,4 @@
-import { insertRow, logOut } from '../fetch-utils.js';
+import { insertRow, logOut, getUser } from '../fetch-utils.js';
 
 const homeBtn = document.getElementById('home');
 const logOutBtn = document.getElementById('log-out');
@@ -6,6 +6,13 @@ const postForm = document.getElementById('create-post-form');
 const title = document.getElementById('title');
 const message = document.getElementById('message');
 const contact = document.getElementById('contact');
+
+window.addEventListener('load', async () => {
+    const authStatus = getUser();
+    if (!authStatus) {
+        location.replace('/auth/');
+    }
+});
 
 homeBtn.addEventListener('click', () => {
     location.replace('/');
@@ -23,7 +30,6 @@ postForm.addEventListener('submit', async (e) => {
         text: message.value,
         contact: contact.value
     };
-    // console.log(newPost);
     const test = await insertRow(newPost);
     postForm.reset();
     location.replace('/');
