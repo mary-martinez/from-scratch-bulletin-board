@@ -34,7 +34,7 @@ export async function logOut() {
 
 export function redirectIfLoggedIn() {
     if (getUser()) {
-        location.replace('/bulletins/');
+        location.replace('/');
     }
 }
 
