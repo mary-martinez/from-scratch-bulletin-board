@@ -16,4 +16,5 @@ If you work on more than one feature at a time, you are guaranteed to multiply y
 
 Photocredits:
 - Rufus.jpg - Photo by Helena Lopes from Pexels: https://www.pexels.com/photo/short-coated-tan-dog-2253275/
-- 
+- Photo by Lukas from Pexels
+- Photo by Belle Co from Pexels
