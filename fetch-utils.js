@@ -27,8 +27,19 @@ export async function signInUser(email, password) {
     return resp;
 }
 
+export async function logOut() {
+    const resp = client.auth.signOut();
+    return resp;
+}
+
 export function redirectIfLoggedIn() {
     if (getUser()) {
         location.replace('/bulletins/');
+    }
+}
+
+export function checkAuth() {
+    if (!getUser()) {
+        location.replace('/');
     }
 }

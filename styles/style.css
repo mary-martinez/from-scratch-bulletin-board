@@ -58,3 +58,17 @@ form {
 img {
     max-width: 200px;
 }
+#pinHere {
+    display: flex;
+    flex-direction: row;
+}
+
+.note {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    text-overflow: wrap;
+    border: 2px black solid;
+}
+
